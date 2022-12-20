@@ -1,0 +1,21 @@
+<h2>Kitoblarimiz</h2>
+
+
+{% for book in books %}
+  <ul>
+    <li>Id: {{book.id}}</li>
+    <li>Title: {{book.title}}</li>
+    <li>Content: {{book.subtitle}}</li>
+    <li>Author: {{book.author}}</li>
+  </ul>
+{% for comment in comments %}
+  {% if comment.post_id == book.id|slugify %}
+  <ul>
+    <li style="color:blue">Id: {{comment.post_id}}</li>
+    <li style="color:blue">comment: {{comment.comment}}</li>
+  </ul>
+  {% endif %}
+ {% endfor %}
+{% endfor %}
+
+
